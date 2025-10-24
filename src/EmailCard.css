@@ -1,0 +1,104 @@
+.email-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  max-width: 350px;
+  margin: 0 auto;
+  overflow: visible; /* allow content to be fully visible */
+}
+
+.email-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.email-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.email-card:hover .email-icon {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+.email-heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.email-subtext {
+  font-size: 16px;
+  color: #64748b;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.email-link {
+  display: block;
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 8px;
+  border-radius: 8px;
+  background: rgba(37, 99, 235, 0.1);
+  transition: all 0.3s ease;
+  word-break: break-word; /* break words naturally */
+  overflow-wrap: break-word; /* wrap long emails properly */
+  white-space: normal;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+.email-link:hover {
+  background: rgba(37, 99, 235, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .email-card {
+    padding: 24px 16px;
+    max-width: 320px;
+  }
+  
+  .email-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .email-heading {
+    font-size: 20px;
+  }
+  
+  .email-subtext {
+    font-size: 14px;
+  }
+  
+  .email-link {
+    font-size: 13px;
+    padding: 10px 6px;
+    line-height: 1.3;
+  }
+}
