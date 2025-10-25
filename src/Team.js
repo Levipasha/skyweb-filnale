@@ -248,7 +248,7 @@ function Team() {
             <div className="stat-label">Projects Completed</div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">6</div>
+            <div className="stat-number">9+</div>
             <div className="stat-label">Team Members</div>
           </div>
           <div className="stat-item">
