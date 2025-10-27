@@ -1,0 +1,52 @@
+# Render.yaml - Configuration for optimal deployment on Render
+
+services:
+  - type: web
+    name: skyweb-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./build
+    
+    # Routes configuration
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    
+    # Headers for better performance
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      
+      - path: /static/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      
+      - path: /*.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      
+      - path: /*.css
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      
+      - path: /*.html
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+    
+    # Environment variables
+    envVars:
+      - key: NODE_ENV
+        value: production
+      
+      - key: GENERATE_SOURCEMAP
+        value: false
+      
+      - key: INLINE_RUNTIME_CHUNK
+        value: true
+

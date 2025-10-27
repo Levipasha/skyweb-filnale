@@ -1,0 +1,32 @@
+# https://www.robotstxt.org/robotstxt.html
+# SkyWeb - Web Development & MERN Stack Solutions
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Allow specific search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.skyweb.in/sitemap.xml
+
+# Crawl-delay for slower bots
+User-agent: *
+Crawl-delay: 1
