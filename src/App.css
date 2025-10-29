@@ -187,7 +187,9 @@ body {
   font-size: 18px;
   line-height: 1.8;
   font-weight: 400;
-  text-align: left;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .hero-actions {
@@ -614,7 +616,8 @@ body {
   
   .welcome-text p {
     font-size: 16px;
-    text-align: center;
+    text-align: justify;
+    text-justify: inter-word;
   }
   
   .title-line1 {
@@ -752,7 +755,8 @@ body {
   
   .welcome-text p {
     font-size: 15px;
-    text-align: center;
+    text-align: justify;
+    text-justify: inter-word;
   }
   
   /* Extra safety for small screens */
@@ -846,7 +850,8 @@ body {
   
   .welcome-text p {
     font-size: 14px;
-    text-align: center;
+    text-align: justify;
+    text-justify: inter-word;
   }
   
   .hero-left {
