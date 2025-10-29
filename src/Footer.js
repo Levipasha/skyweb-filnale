@@ -71,11 +71,44 @@ function Footer() {
             © 2025 SkyWeb. All rights reserved.
           </p>
           <div className="footer-legal">
-            <a href="#privacy">Privacy Policy</a>
+            <a
+              href="#privacy"
+              onClick={(e) => {
+                e.preventDefault();
+                try {
+                  window.history.pushState({ page: 'Privacy' }, '', '#privacy');
+                  window.dispatchEvent(new PopStateEvent('popstate', { state: { page: 'Privacy' } }));
+                } catch (_) {
+                  window.location.href = '/#privacy';
+                }
+              }}
+            >Privacy Policy</a>
             <span className="separator">•</span>
-            <a href="#terms">Terms of Service</a>
+            <a
+              href="#terms"
+              onClick={(e) => {
+                e.preventDefault();
+                try {
+                  window.history.pushState({ page: 'Terms' }, '', '#terms');
+                  window.dispatchEvent(new PopStateEvent('popstate', { state: { page: 'Terms' } }));
+                } catch (_) {
+                  window.location.href = '/#terms';
+                }
+              }}
+            >Terms of Service</a>
             <span className="separator">•</span>
-            <a href="#cookies">Cookie Policy</a>
+            <a
+              href="#cookie-policy"
+              onClick={(e) => {
+                e.preventDefault();
+                try {
+                  window.history.pushState({ page: 'Cookie Policy' }, '', '#cookie-policy');
+                  window.dispatchEvent(new PopStateEvent('popstate', { state: { page: 'Cookie Policy' } }));
+                } catch (_) {
+                  window.location.href = '/#cookie-policy';
+                }
+              }}
+            >Cookie Policy</a>
           </div>
         </div>
 
