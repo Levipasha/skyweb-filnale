@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { fetchInternships as fetchInternshipsApi, submitInternshipApplication } from './utils/api';
 import './Internship.css';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+// Using centralized API utils; removes reliance on localhost or env mismatch
 
 function Internship() {
   const [internships, setInternships] = useState([]);
@@ -29,12 +29,8 @@ function Internship() {
   const fetchInternships = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`${API_URL}/internships`, {
-        params: { isActive: true }
-      });
-      if (response.data.success) {
-        setInternships(response.data.data);
-      }
+      const data = await fetchInternshipsApi(true);
+      setInternships(Array.isArray(data) ? data : []);
     } catch (error) {
       console.error('Error fetching internships:', error);
     } finally {
@@ -100,18 +96,20 @@ function Internship() {
     setSubmitting(true);
 
     try {
-      const response = await axios.post(`${API_URL}/enrollments`, {
+      const result = await submitInternshipApplication({
         internshipId: selectedInternship._id,
-        ...formData
+        ...formData,
       });
 
-      if (response.data.success) {
-        alert(response.data.message || 'Application submitted successfully!');
+      if (result?.success) {
+        alert(result.message || 'Application submitted successfully!');
         closeModal();
+      } else {
+        alert(result?.error || 'Failed to submit application. Please try again.');
       }
     } catch (error) {
       console.error('Submission error:', error);
-      alert(error.response?.data?.error || 'Failed to submit application. Please try again.');
+      alert(error?.message || 'Failed to submit application. Please try again.');
     } finally {
       setSubmitting(false);
     }
