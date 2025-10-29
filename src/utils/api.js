@@ -3,7 +3,7 @@
  * Optimized for Render's free tier with cold start handling
  */
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://skyweb-backend-navy.vercel.app/api';
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 /**
