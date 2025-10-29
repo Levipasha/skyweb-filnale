@@ -21,6 +21,8 @@ const Team = lazy(() => import('./Team'));
 const Footer = lazy(() => import('./Footer'));
 const Internship = lazy(() => import('./Internship'));
 const Terms = lazy(() => import('./Terms'));
+const Privacy = lazy(() => import('./Privacy'));
+const CookiePolicy = lazy(() => import('./CookiePolicy'));
 const Websites = lazy(() => import('./Websites'));
 const Apps = lazy(() => import('./Apps'));
 const CollegeProjects = lazy(() => import('./CollegeProjects'));
@@ -345,6 +347,34 @@ function App() {
         {renderNavigation()}
         <Suspense fallback={<LoadingFallback />}>
           <Terms />
+          <Footer />
+          <ChatBot isOpen={isChatOpen} onToggle={handleChatToggle} />
+        </Suspense>
+      </div>
+    );
+  }
+
+  // Render Privacy Policy page
+  if (activePage === 'Privacy') {
+    return (
+      <div className="app">
+        {renderNavigation()}
+        <Suspense fallback={<LoadingFallback />}>
+          <Privacy />
+          <Footer />
+          <ChatBot isOpen={isChatOpen} onToggle={handleChatToggle} />
+        </Suspense>
+      </div>
+    );
+  }
+
+  // Render Cookie Policy page
+  if (activePage === 'Cookie Policy') {
+    return (
+      <div className="app">
+        {renderNavigation()}
+        <Suspense fallback={<LoadingFallback />}>
+          <CookiePolicy />
           <Footer />
           <ChatBot isOpen={isChatOpen} onToggle={handleChatToggle} />
         </Suspense>
