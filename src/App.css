@@ -568,6 +568,31 @@ body {
     text-align: center;
   }
   
+  /* Center hero content on tablets and smaller */
+  .hero-left {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  
+  .hero-title {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .title-line1,
+  .title-line2 {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .welcome-text {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
   .lottie-container {
     height: 200px;
   }
@@ -730,6 +755,31 @@ body {
     text-align: center;
   }
   
+  /* Extra safety for small screens */
+  .hero-left {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  
+  .hero-title {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .title-line1,
+  .title-line2 {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .welcome-text {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
   .title-line1 {
     font-size: 32px;
   }
@@ -796,6 +846,30 @@ body {
   
   .welcome-text p {
     font-size: 14px;
+    text-align: center;
+  }
+  
+  .hero-left {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  
+  .hero-title {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .title-line1,
+  .title-line2 {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .welcome-text {
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
   }
   
