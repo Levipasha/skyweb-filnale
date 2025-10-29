@@ -62,7 +62,7 @@ function Contact() {
           </div>
 
           <a 
-            href="https://maps.google.com/?q=Uppal,+Hyderabad,+Telangana,+India" 
+            href="https://share.google/o1oz834rJumLNkGaj" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="contact-card location-card-link" 
