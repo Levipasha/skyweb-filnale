@@ -30,6 +30,9 @@
   margin-bottom: 0;
   position: relative;
   overflow: hidden;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .about-header::before {
@@ -86,6 +89,9 @@
   color: white;
   position: relative;
   overflow: hidden;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .about-hero::before {
@@ -139,6 +145,28 @@
 .about-section:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
+}
+
+/* Performance tweaks: reduce header background animations on mobile and when reduced motion */
+@media (max-width: 1024px) {
+  .about-header::before,
+  .about-header::after {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-header::before,
+  .about-header::after,
+  .about-title,
+  .about-subtitle,
+  .about-hero-title,
+  .about-hero-subtitle,
+  .about-section,
+  .about-content {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 .about-section h2 {
